@@ -87,12 +87,14 @@ async function runReport(propertyid) {
 
 
     const allData = response.rows.map(row => {
+        let totalusers=0;
         const date = row.dimensionValues[0].value;
         const formattedDate = `${date.slice(0, 4)}-${date.slice(4, 6)}-${date.slice(6, 8)}`; // Format date as "YYYY-MM-dd"
         const activeUsers = parseInt(row.metricValues[0].value);
         const screenPageViews = parseInt(row.metricValues[1].value);
         const sessions = parseInt(row.metricValues[2].value);
         const newUsers = parseInt(row.metricValues[3].value);
+        totalusers=activeUsers+newUsers;
         // const users = parseInt(row.metricValues[4].value); // Extract users metric
 
       
@@ -102,7 +104,7 @@ async function runReport(propertyid) {
             sessions: sessions,
             users: activeUsers,
             newusers: newUsers,
-           
+           totalusers:totalusers,
             date: formattedDate // Use formatted date
         };
     });
