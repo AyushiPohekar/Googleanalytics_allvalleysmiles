@@ -12,6 +12,7 @@
   "dependencies": {
     "@google-analytics/data": "^4.6.0",
     "express": "^4.19.2",
+    "gitignore": "^0.7.0",
     "nodemon": "^3.1.0"
   }
 }
