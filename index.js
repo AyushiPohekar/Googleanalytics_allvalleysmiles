@@ -16,7 +16,7 @@ app.use(express.json());
 let analyticsDataClient = new BetaAnalyticsDataClient();
 
 
-app.get('/endpoint', async (req, res) => {
+app.get('/getdata', async (req, res) => {
     const propertyid=req.query.propertyid;
     // const private_key=req.query.private_key;
     // const client_email=req.query.client_email;
